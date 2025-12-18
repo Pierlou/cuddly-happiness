@@ -5,7 +5,7 @@ ____
 # Présentation
 
 L'API tabulaire est une API REST permettant de requêter par API l'ensemble des données tabulaires référencées sur la plateforme data.gouv.fr.
-Elle permet de récupérer la description générale ainsi que l'ensemble du contenu de la donnée au format JSON ou via un export CSV.
+Elle permet de récupérer la description générale ainsi que l'ensemble du contenu de la donnée au format JSON ou via un export CSV ou JSON.
 
 L'API permet uniquement la lecture et seule la méthode `GET` est supportée.
 
@@ -21,6 +21,7 @@ Les fichiers tabulaires aujourd'hui supportés pour la mise à disposition par A
 | csv.gz | 100 Mo          |
 | xls    | 50 Mo           |
 | xlsx   | 12.5 Mo         |
+| parquet| 50 Mo           |
 
 A partir du moment où une donnée est référencée sur data.gouv.fr et correspond aux critères de format et de taille, elle est automatiquement intégrée sur l'API tabulaire dans les quelques minutes qui suivent.
 
@@ -188,8 +189,14 @@ column_name__differs=value
 # contient (pour les chaînes de caractère)
 column_name__contains=value
 
+# ne contient pas (pour les chaînes de caractère)
+column_name__notcontains=value
+
 # dans (valeur dans une liste)
 column_name__in=value1,value2,value3
+
+# pas dans (valeur dans une liste)
+column_name__notin=value1,value2,value3
 
 # inférieur à
 column_name__less=value
